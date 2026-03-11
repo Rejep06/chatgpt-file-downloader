@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatGPT Direct Download</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 14px;
+      width: 380px;
+      background: #111827;
+      color: #f9fafb;
+    }
+
+    h1 {
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .muted {
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    #status {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 95px;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-top: 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #0b1220;
+      color: #93c5fd;
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button.primary { background: #22c55e; color: #111827; }
+    button.secondary { background: #60a5fa; color: #111827; }
+    button.warning { background: #f59e0b; color: #111827; }
+    button.neutral { background: #374151; color: #f9fafb; }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>ChatGPT Direct Download</h1>
+  <div class="muted">Перехватывает JSON-ответ download?message_id и достаёт поле <code>download_url</code>.</div>
+
+  <div class="card">
+    <div id="tabInfo" class="muted">Определяю активную вкладку…</div>
+    <div id="status" style="margin-top:8px;">Загрузка…</div>
+
+    <textarea id="downloadUrl" readonly placeholder="Здесь появится download_url после нажатия Download в ChatGPT"></textarea>
+
+    <div class="row">
+      <button id="attachBtn" class="neutral">Подключить debugger</button>
+      <button id="detachBtn" class="neutral">Отключить debugger</button>
+      <button id="copyBtn" class="warning" disabled>Копировать URL</button>
+      <button id="openBtn" class="secondary" disabled>Открыть URL</button>
+      <button id="downloadBtn" class="primary" disabled>Скачать напрямую</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
