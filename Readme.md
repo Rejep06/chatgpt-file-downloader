@@ -19,7 +19,7 @@
 
 1. Скачайте ZIP архива репозитория:
 
-[Download Extension](https://github.com/USERNAME/REPO/archive/refs/heads/main.zip)
+[Download Extension](https://github.com/Rejep06/chatgpt-file-downloader/archive/refs/heads/main.zip)
 
 2. Распакуйте ZIP в удобную папку.
 
